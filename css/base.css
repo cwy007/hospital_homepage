@@ -27,3 +27,25 @@ a {
 }
 
 /* #header 模块内样式 */
+.header .logo {
+  width: 402px;
+  height: 74px;
+  padding: 9px 0;
+  display: inline-block;
+}
+
+.header .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.header .search {
+  width: 326px;
+  height: 38px;
+  position: absolute;
+  right: 0;
+  top: 29px;
+  background-color: orange;
+}
+
+/* #nav 模块内样式 */
