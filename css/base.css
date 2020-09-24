@@ -1,0 +1,29 @@
+a {
+  text-decoration: none;
+}
+
+/* #top 模块内样式 */
+.top {
+  line-height: 30px;
+  font-size: 13px;
+  color: #868686;
+}
+
+.top .call {
+  float: left;
+  padding-left: 20px;
+  background: url(../img/icon-call.png) no-repeat center left;
+}
+
+.top .welcome {
+  float: right;
+}
+
+.top .login,
+.top .signup,
+.top .help-center {
+  color: #2da5e1;
+  padding-left: 10px;
+}
+
+/* #header 模块内样式 */
