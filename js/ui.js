@@ -98,7 +98,6 @@ $.fn.UiCascading = function() {
     // 根据当前的值，触发下一个 select 的更新
     where = where ? where.split(',') : [];
     where.push(val);
-    console.log(where.join(','));
     selects.eq(index + 1)
       .attr('data-where', where.join(','))
       .triggerHandler('reloadOptions');
@@ -111,8 +110,6 @@ $.fn.UiCascading = function() {
     })
   })
   .on('reloadOptions', function() {
-    console.log($(this).attr('data-search'));
-    console.log(AjaxRemoteGetData[method]);
     var method = $(this).attr('data-search'),
         args = $(this).attr('data-where').split(','),
         data = AjaxRemoteGetData[method].apply(this, args),
@@ -125,9 +122,34 @@ $.fn.UiCascading = function() {
   })
 }
 
+/**
+ * ui-tab
+ * @param {string} header  TAB组件，的所有选项卡 item
+ * @param {string} content TAB组件，内容区域，所有 item
+ * @param {string} focus_prefix  选项卡高亮样式前缀，可选
+ */
+$.fn.UiTab = function(header, content, focus_prefix) {
+  var ui = $(this),
+      tabs = $(header, ui),
+      cons = $(content, ui),
+      focus_prefix = focus_prefix || '';
+
+  tabs.on('click', function() {
+    var index = $(this).index();
+    tabs.removeClass(focus_prefix + 'item_focus')
+        .eq(index)
+        .addClass(focus_prefix + 'item_focus');
+    cons.hide().eq(index).show();
+    return false;
+  });
+}
+
 // 页面的脚本逻辑
 $(function() {
   $('.ui-search').UiSearch();
   $('.ui-slider').UiSlider();
   $('.ui-cascading').UiCascading();
+
+  $('.ui-tab').UiTab('.caption > .item', '.block > .item');
+  $('.ui-tab .block .item').UiTab('.block-caption-item', '.block-content > .block-wrap', 'block-caption-');
 });
