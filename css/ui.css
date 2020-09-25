@@ -61,3 +61,112 @@
 }
 
 /* ui-menu 分类菜单 */
+.ui-menu-item {
+  height: 22px;
+  line-height: 22px;
+  padding: 8px 5px 9px 6px;
+  margin-left: 2px;
+}
+
+.ui-menu-item:hover {
+  background-color: #fff;
+}
+
+.ui-menu-item-department {
+  float: left;
+  height: 22px;
+  line-height: 22px;
+  position: relative;
+  padding-left: 30px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.ui-menu-item-department:before {
+  content: ' ';
+  display: block;
+  width: 22px;
+  height: 21px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  background: url(../img/icon-menu.jpg) -22px 0 no-repeat;
+}
+
+.ui-menu-item:nth-child(2) .ui-menu-item-department:before {
+  background-position-y: -22px;
+}
+
+.ui-menu-item:nth-child(3) .ui-menu-item-department:before {
+  background-position-y: -88px;
+}
+
+.ui-menu-item-disease {
+  font-size: 12px;
+  float: right;
+  padding-left: 5px;
+  color: #d7f3ff;
+}
+
+.ui-menu-item:hover .ui-menu-item-department:before {
+  background-position-x: 0;
+}
+
+.ui-menu-item:hover .ui-menu-item-department {
+  color: #333;
+}
+
+.ui-menu-item:hover .ui-menu-item-disease {
+  color: #868686;
+}
+
+.ui-menu-item:hover .ui-menu-item-detail {
+  display: block;
+}
+
+.ui-menu-item-detail {
+  display: none;
+  position: absolute;
+  width: 500px;
+  height: 393px;
+  padding: 20px 10px 10px 29px;
+  background: #fff url(../img/bg-menu.jpg) center no-repeat;
+  top: 0;
+  left: 190px;
+  box-shadow: 5px 5px 2px rgba(0, 0, 0, .1);
+  z-index: 9;
+}
+
+.ui-menu-item-detail-group {
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.ui-menu-item-detail-group-caption {
+  width: 100%;
+  height: 34px;
+  display: block;
+  line-height: 34px;
+  color: #666;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ui-menu-item-detail-group-list {
+  line-height: 23px;
+}
+
+.ui-menu-item-detail-group-list a {
+  display: inline-block;
+  color: #868686;
+  margin-left: 8px;
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+
+.ui-menu-item-detail-group-list a:after {
+  content: '|';
+  color: #eee;
+  padding-left: 8px;
+}
+

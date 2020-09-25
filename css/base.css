@@ -64,7 +64,12 @@ input {
 }
 
 .nav a:hover {
+  color: #1fa4f0;
+}
+
+.nav .wrap > a:hover {
   background-color: #1fa4f0;
+  color: #fff;
 }
 
 .nav .menu {
