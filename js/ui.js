@@ -84,8 +84,50 @@ $.fn.UiSlider = function() {
   });
 }
 
+// ui-cascading 级联效果
+$.fn.UiCascading = function() {
+  var ui = $(this),
+      selects = $('select', ui);
+
+  selects
+  .on('change', function() {
+    var val = $(this).val(),
+        index = selects.index(this),
+        where = $(this).attr('data-where');
+
+    // 根据当前的值，触发下一个 select 的更新
+    where = where ? where.split(',') : [];
+    where.push(val);
+    console.log(where.join(','));
+    selects.eq(index + 1)
+      .attr('data-where', where.join(','))
+      .triggerHandler('reloadOptions');
+
+    // 触发下一个之后的 select 的初始化（清除不应该的数据项）
+    ui.find('select:gt(' + (index + 1) + ')').each(function() {
+      $(this)
+      .attr('data-where', '')
+      .triggerHandler('reloadOptions');
+    })
+  })
+  .on('reloadOptions', function() {
+    console.log($(this).attr('data-search'));
+    console.log(AjaxRemoteGetData[method]);
+    var method = $(this).attr('data-search'),
+        args = $(this).attr('data-where').split(','),
+        data = AjaxRemoteGetData[method].apply(this, args),
+        select = $(this);
+    select.find('option').remove();
+    $.each(data, function(i, item) {
+      var el =$('<option value="' + item + '">' + item + '</option>');
+      select.append(el);
+    })
+  })
+}
+
 // 页面的脚本逻辑
 $(function() {
   $('.ui-search').UiSearch();
   $('.ui-slider').UiSlider();
+  $('.ui-cascading').UiCascading();
 });

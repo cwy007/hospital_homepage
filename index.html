@@ -219,28 +219,31 @@
     </div>
     <div class="banner-search">
       <div class="caption"><span class="text">快速预约</span></div>
-      <div class="form">
+      <div class="form ui-cascading">
         <div class="line">
-          <select name="area">
+          <select name="area" data-search="getDistinctArea" data-where="">
             <option>医院地区</option>
+            <option>朝阳区</option>
+            <option>西城区</option>
+            <option>海淀区</option>
+            <option>丰台区</option>
+            <option>顺义区</option>
+            <option>通州区</option>
           </select>
         </div>
         <div class="line">
-          <select name="level">
-            <option>医院等级1</option>
-            <option>医院等级2</option>
+          <select name="level" data-search="getLevelByArea" data-where="">
+            <option>医院等级</option>
           </select>
         </div>
         <div class="line">
-          <select name="name">
-            <option>医院名称1</option>
-            <option>医院等级2</option>
+          <select name="name" data-search="getNameByAreaAndLevel" data-where="">
+            <option>医院名称</option>
           </select>
         </div>
         <div class="line">
-          <select name="department">
-            <option>医院科室1</option>
-            <option>医院科室2</option>
+          <select name="department" data-search="getDepartmentArrByHospitalName" data-where="">
+            <option>医院科室</option>
           </select>
         </div>
         <div class="submit">
