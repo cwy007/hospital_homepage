@@ -18,3 +18,5 @@ browser-sync start --server --browser "Google Chrome" --files "**/*.css, *.html,
 ![基本样式](https://tva1.sinaimg.cn/large/007S8ZIlgy1gj2ayzxnlhj30u00umx2m.jpg)
 
 ## step3 动态交互
+
+![动态交互](https://tva1.sinaimg.cn/large/007S8ZIlly1gj339tvqx4j30u00um7wi.jpg)
