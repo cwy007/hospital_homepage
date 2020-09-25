@@ -241,3 +241,24 @@
 .ui-slider-process .item:hover {
   background-position: -23px 0;
 }
+
+/* 返回顶部 */
+.ui-back-top {
+  display: none;
+  position: fixed;
+  right: 2px;
+  bottom: 2px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: rgb(102, 102, 102) url(../img/icon-go-up.png) center no-repeat;
+  z-index: 9;
+}
+
+.ui-back-top:hover:after {
+  background: rgb(102, 102, 102);
+  content: '回到顶部';
+  display: block;
+  line-height: 20px;
+  text-align: center;
+}

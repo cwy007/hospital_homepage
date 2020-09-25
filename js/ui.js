@@ -144,6 +144,26 @@ $.fn.UiTab = function(header, content, focus_prefix) {
   });
 }
 
+// ui-back-top
+$.fn.UiBackTop = function() {
+  var ui = $(this),
+      el = $('<a href="#" class="ui-back-top"></a>'),
+      windowHeight = $(window).height();
+
+  ui.append(el);
+  $(window).on('scroll', function() {
+    var top = $('html, body').scrollTop();
+    if (top > windowHeight) {
+      el.show();
+    } else {
+      el.hide();
+    }
+  });
+  el.on('click', function() {
+    $(window).scrollTop(0);
+  });
+}
+
 // 页面的脚本逻辑
 $(function() {
   $('.ui-search').UiSearch();
@@ -152,4 +172,6 @@ $(function() {
 
   $('.ui-tab').UiTab('.caption > .item', '.block > .item');
   $('.ui-tab .block .item').UiTab('.block-caption-item', '.block-content > .block-wrap', 'block-caption-');
+
+  $('body').UiBackTop();
 });

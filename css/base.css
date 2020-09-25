@@ -339,23 +339,3 @@ input {
   color: #666;
   font-size: 12px;
 }
-
-/* 返回顶部 */
-.go-top {
-  position: fixed;
-  right: 2px;
-  bottom: 2px;
-  display: block;
-  width: 40px;
-  height: 40px;
-  color: #fff;
-  background: rgb(102, 102, 102) url(../img/icon-go-up.png) center no-repeat;
-}
-
-.go-top:hover:after {
-  background: rgb(102, 102, 102);
-  content: '回到顶部';
-  display: block;
-  line-height: 20px;
-  text-align: center;
-}
