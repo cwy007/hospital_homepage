@@ -152,7 +152,7 @@ $.fn.UiBackTop = function() {
 
   ui.append(el);
   $(window).on('scroll', function() {
-    var top = $('html, body').scrollTop();
+    var top = $('body, html').scrollTop();
     if (top > windowHeight) {
       el.show();
     } else {
